@@ -25,6 +25,16 @@ namespace BotBitsExt.Afk
         }
 
         /// <summary>
+        /// Determines if the specifecd player is in automatic state.
+        /// </summary>
+        /// <returns><c>true</c> if player is afk; otherwise, <c>false</c>.</returns>
+        /// <param name="player">Player.</param>
+        public static bool IsAutoAfk(this Player player)
+        {
+            return player.Get<bool>("AutoAfk");
+        }
+
+        /// <summary>
         /// Sets the afk state of the specifed player.
         /// </summary>
         /// <param name="player">Player.</param>

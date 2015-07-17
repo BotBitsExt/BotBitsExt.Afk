@@ -32,13 +32,15 @@ namespace BotBitsExt.Afk
         [EventListener]
         private void OnMove(MoveEvent e)
         {
-            e.Player.SetAutoAfk(false);
+            if (e.Player.IsAutoAfk())
+                e.Player.SetAutoAfk(false);
         }
 
         [EventListener]
         private void OnFly(FlyEvent e)
         {
-            e.Player.SetAutoAfk(false);
+            if (e.Player.IsAutoAfk())
+                e.Player.SetAutoAfk(false);
         }
 
         /// <summary>
@@ -49,7 +51,8 @@ namespace BotBitsExt.Afk
             var players = Players.Of(BotBits).GetPlayers();
             foreach (var player in players)
             {
-                player.SetAutoAfk(true);
+                if (!player.IsAutoAfk())
+                    player.SetAutoAfk(true);
             }
         }
 
