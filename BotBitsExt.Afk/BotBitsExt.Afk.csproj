@@ -30,19 +30,13 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="PlayerIOClient">
-      <HintPath>..\packages\PlayerIOClient-Signed.3.1.0\lib\PlayerIOClient.dll</HintPath>
-    </Reference>
-    <Reference Include="BotBits.Permissions">
-      <HintPath>..\packages\BotBits.Permissions.1.0.1\lib\net40\BotBits.Permissions.dll</HintPath>
+      <HintPath>..\packages\PlayerIOClient-Signed.3.2.353\lib\PlayerIOClient.dll</HintPath>
     </Reference>
     <Reference Include="BotBits">
-      <HintPath>..\packages\BotBits.1.3.15\lib\net40\BotBits.dll</HintPath>
+      <HintPath>..\packages\BotBits.1.4.3\lib\net40\BotBits.dll</HintPath>
     </Reference>
-    <Reference Include="BotBitsExt.Commands">
-      <HintPath>..\packages\BotBitsExt.Commands.1.0.7\lib\net40\BotBitsExt.Commands.dll</HintPath>
-    </Reference>
-    <Reference Include="BotBitsExt.Storage">
-      <HintPath>..\packages\BotBitsExt.Storage.1.0.8\lib\net40\BotBitsExt.Storage.dll</HintPath>
+    <Reference Include="BotBits.Commands">
+      <HintPath>..\packages\BotBits.Commands.1.1.3\lib\net40\BotBits.Commands.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -56,10 +50,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Events\" />
     <Folder Include="Commands\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

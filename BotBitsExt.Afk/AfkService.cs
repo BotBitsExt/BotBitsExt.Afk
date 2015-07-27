@@ -1,9 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BotBits;
 using BotBits.Events;
 using BotBitsExt.Afk.Events;
-using System.Collections.Generic;
 
 namespace BotBitsExt.Afk
 {
@@ -12,6 +12,8 @@ namespace BotBitsExt.Afk
         [EventListener]
         private void OnJoin(JoinEvent e)
         {
+            e.Player.SetAutoAfk(true);
+
             e.Player.MetadataChanged += (sender, args) =>
                 {
                     if (args.Key == "Afk")
@@ -25,8 +27,6 @@ namespace BotBitsExt.Afk
                             .RaiseIn(BotBits);
                     }
                 };
-
-            e.Player.SetAutoAfk(true);
         }
 
         [EventListener]
@@ -52,7 +52,9 @@ namespace BotBitsExt.Afk
             foreach (var player in players)
             {
                 if (!player.IsAutoAfk())
+                {
                     player.SetAutoAfk(true);
+                }
             }
         }
 

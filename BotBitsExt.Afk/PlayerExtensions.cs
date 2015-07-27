@@ -29,7 +29,7 @@ namespace BotBitsExt.Afk
         /// </summary>
         /// <returns><c>true</c> if player is afk; otherwise, <c>false</c>.</returns>
         /// <param name="player">Player.</param>
-        public static bool IsAutoAfk(this Player player)
+        internal static bool IsAutoAfk(this Player player)
         {
             return player.Get<bool>("AutoAfk");
         }
@@ -49,7 +49,7 @@ namespace BotBitsExt.Afk
         /// </summary>
         /// <param name="player">Player.</param>
         /// <param name="afk">If set to <c>true</c> auto afk state is enabled.</param>
-        public static void SetAutoAfk(this Player player, bool afk)
+        internal static void SetAutoAfk(this Player player, bool afk)
         {
             player.Set("AutoAfk", afk);
         }

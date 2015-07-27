@@ -1,7 +1,6 @@
 ﻿using System;
 using BotBits;
-using BotBits.Permissions;
-using BotBitsExt.Commands;
+using BotBits.Commands;
 
 namespace BotBitsExt.Afk.Commands
 {
@@ -15,21 +14,21 @@ namespace BotBitsExt.Afk.Commands
             InitializeFinish += delegate { CommandLoader.Of(BotBits).Load(this); };
         }
 
-        [Command("afk", "unafk")]
-        [MinGroup(Group.User)]
-        private void OnCommand(ParsedCommand message)
+        [Command(0, "afk", "unafk")]
+        private void OnCommand(IInvokeSource source, ParsedRequest request)
         {
-            var isAfk = message.Player.IsAfk(considerAutoAfk: false);
+            var player = source.ToPlayerInvokeSource().Player;
+            var isAfk = player.IsAfk(considerAutoAfk: false);
 
-            if (message.Type == "unafk" || isAfk)
+            if (request.Type == "unafk" || isAfk)
             {
-                message.Player.SetAfk(false);
-                message.Reply("You are no longer afk.");
+                player.SetAfk(false);
+                source.Reply("You are no longer afk.");
             }
             else
             {
-                message.Player.SetAfk(true);
-                message.Reply("You are now afk.");
+                player.SetAfk(true);
+                source.Reply("You are now afk.");
             }
         }
     }
