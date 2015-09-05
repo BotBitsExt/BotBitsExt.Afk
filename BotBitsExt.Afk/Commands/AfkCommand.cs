@@ -9,14 +9,21 @@ namespace BotBitsExt.Afk.Commands
     /// </summary>
     public sealed class AfkCommand : Package<AfkCommand>
     {
+        public bool Enabled { get; set; }
+
         public AfkCommand()
         {
+            Enabled = true;
+
             InitializeFinish += delegate { CommandLoader.Of(BotBits).Load(this); };
         }
 
         [Command(0, "afk", "unafk")]
         private void OnCommand(IInvokeSource source, ParsedRequest request)
         {
+            if (!Enabled)
+                return;
+
             var player = source.ToPlayerInvokeSource().Player;
             var isAfk = player.IsAfk(considerAutoAfk: false);
 
