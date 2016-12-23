@@ -1,5 +1,4 @@
-﻿using System;
-using BotBits;
+﻿using BotBits;
 
 namespace BotBitsExt.Afk
 {
