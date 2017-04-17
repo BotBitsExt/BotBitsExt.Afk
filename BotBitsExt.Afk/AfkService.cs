@@ -47,7 +47,7 @@ namespace BotBitsExt.Afk
         /// </summary>
         public void ResetAutoAfk()
         {
-            var players = Players.Of(BotBits).GetPlayers();
+            var players = Players.Of(BotBits);
             foreach (var player in players)
             {
                 if (!player.IsAutoAfk())
@@ -65,7 +65,7 @@ namespace BotBitsExt.Afk
         {
             get
             {
-                return Players.Of(BotBits).GetPlayers()
+                return Players.Of(BotBits)
                     .Where(player => player.IsAfk())
                     .ToList();
             }
@@ -79,7 +79,7 @@ namespace BotBitsExt.Afk
         {
             get
             {
-                return Players.Of(BotBits).GetPlayers()
+                return Players.Of(BotBits)
                     .Where(player => !player.IsAfk())
                     .ToList();
             }
