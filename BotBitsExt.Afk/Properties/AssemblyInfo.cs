@@ -4,7 +4,7 @@
 // Change them to the values specific to your project.
 
 [assembly: AssemblyTitle("BotBitsExt.Afk")]
-[assembly: AssemblyDescription("A afk extension for BotBits.")]
+[assembly: AssemblyDescription("An afk extension for BotBits.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Tunous")]
 [assembly: AssemblyProduct("BotBitsExt.Afk")]

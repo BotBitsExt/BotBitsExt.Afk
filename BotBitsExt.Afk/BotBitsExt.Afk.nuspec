@@ -2,12 +2,12 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>1.1.4</version>
-    <title>$title$</title>
-    <authors>$author$</authors>
-    <owners>$author$</owners>
+    <version>1.1.5</version>
+    <title>BotBitsExt.Afk</title>
+    <authors>Tunous, EEJesse</authors>
+    <owners>Tunous, EEJesse</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <description>An afk extension for BotBits.</description>
     <copyright>Copyright 2015-2017 Tunous</copyright>
     <tags>BotBits EverybodyEdits</tags>
   </metadata>
